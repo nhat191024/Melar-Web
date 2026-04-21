@@ -5,7 +5,6 @@ nixPkgs = [
     "libmysqlclient",
     "php84Packages.composer",
     "nodejs_22",
-    "nodePackages.pnpm",
     "openssh",
     "python311Packages.supervisor",
 ]
@@ -14,12 +13,12 @@ nixPkgs = [
 cmds = [
     "mkdir -p /var/log/nginx && mkdir -p /var/cache/nginx",
     "composer install --ignore-platform-reqs --no-interaction --no-scripts",
-    "pnpm install --frozen-lockfile",
+    "npm ci",
 ]
 
 [phases.build]
 cmds = [
-    "pnpm run build",
+    "npm run build",
     "mkdir -p /etc/supervisor/conf.d/",
     "cp /assets/worker-*.conf /etc/supervisor/conf.d/",
     "cp /assets/supervisord.conf /etc/supervisord.conf",
