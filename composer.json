@@ -8,8 +8,11 @@
     "require": {
         "php": "^8.3",
         "filament/filament": "^5.5",
+        "filament/spatie-laravel-tags-plugin": "^5.5",
         "laravel/framework": "^13.0",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "predis/predis": "^3.4",
+        "spatie/laravel-tags": "^4.11"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
